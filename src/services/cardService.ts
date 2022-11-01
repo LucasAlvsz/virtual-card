@@ -1,7 +1,7 @@
 import { CardData } from "@/types/cardTypes"
 import queryFactory from "@/factories/queryFactory"
 import cardRepository from "@/repositories/cardRepository"
-import { conflictError } from "@/errors"
+import { conflictError, notFoundError } from "@/errors"
 
 const createCard = async (cardData: CardData) => {
 	const card = await queryFactory.getByName(cardData.name, "Card")
@@ -9,6 +9,13 @@ const createCard = async (cardData: CardData) => {
 	await cardRepository.create(cardData)
 }
 
+const getCardByName = async (name: string) => {
+	const card = await queryFactory.getByName(name, "Card")
+	if (!card) throw notFoundError("Card does not exist")
+	return card
+}
+
 export default {
 	createCard,
+	getCardByName,
 }
