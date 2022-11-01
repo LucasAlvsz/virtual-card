@@ -9,10 +9,10 @@ const Generate = () => {
 				<InputWrapper info="Name">
 					<input type="text" placeholder="Enter text here" />
 				</InputWrapper>
-				<InputWrapper info="Name">
+				<InputWrapper info="Linkedin URL">
 					<input type="text" placeholder="Enter text here" />
 				</InputWrapper>
-				<InputWrapper info="Name">
+				<InputWrapper info="GitHub URL">
 					<input type="text" placeholder="Enter text here" />
 				</InputWrapper>
 				<button>Generate Image</button>
