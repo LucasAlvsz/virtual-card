@@ -12,7 +12,11 @@ const createCard = async (cardData: CardData) => {
 const getCardByName = async (name: string) => {
 	const card = await queryFactory.getByName(name, "Card")
 	if (!card) throw notFoundError("Card does not exist")
-	return card
+	return {
+		name: card.name,
+		linkedinUrl: card.linkedinUrl,
+		githubUrl: card.githubUrl,
+	}
 }
 
 export default {

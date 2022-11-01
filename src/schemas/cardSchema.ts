@@ -1,16 +1,26 @@
 import joi from "joi"
 import { CardData } from "@/types/cardTypes"
 
-const cardSchemaBody = joi.object<CardData>({
+const createCardSchemaBody = joi.object<CardData>({
 	name: joi.string().required(),
 	linkedinUrl: joi.string().uri().required(),
 	githubUrl: joi.string().uri().required(),
 })
 
-const cardSchema = joi
+const createCardSchema = joi
 	.object({
-		body: cardSchemaBody,
+		body: createCardSchemaBody,
 	})
 	.options({ allowUnknown: true })
 
-export default cardSchema
+const getCardSchemaParams = joi.object({
+	name: joi.string().required(),
+})
+
+const getCardSchema = joi
+	.object({
+		params: getCardSchemaParams,
+	})
+	.options({ allowUnknown: true })
+
+export { createCardSchema, getCardSchema }

@@ -8,4 +8,10 @@ const createCard = async (req: Request, res: Response) => {
 	res.sendStatus(201)
 }
 
-export { createCard }
+const getCardByName = async (req: Request, res: Response) => {
+	const { name } = req.params
+	const card = await cardService.getCardByName(name)
+	res.send(card)
+}
+
+export { createCard, getCardByName }
