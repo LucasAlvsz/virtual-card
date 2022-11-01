@@ -10,10 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Card {
   id          Int      @id @default(autoincrement())
   name        String   @unique
   linkedinUrl String
   githubUrl   String
   createdAt   DateTime @default(now())
+
+  @@map("cards")
 }
