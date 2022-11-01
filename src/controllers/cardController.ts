@@ -4,14 +4,14 @@ import cardService from "@/services/cardService"
 
 const createCard = async (req: Request, res: Response) => {
 	const cardData: CardData = req.body
-	await cardService.createCard(cardData)
-	res.sendStatus(201)
+	const cardId = await cardService.createCard(cardData)
+	res.status(201).send(cardId)
 }
 
-const getCardByName = async (req: Request, res: Response) => {
-	const { name } = req.params
-	const card = await cardService.getCardByName(name)
+const getCardById = async (req: Request, res: Response) => {
+	const { id } = req.params
+	const card = await cardService.getCardById(id)
 	res.send(card)
 }
 
-export { createCard, getCardByName }
+export { createCard, getCardById }

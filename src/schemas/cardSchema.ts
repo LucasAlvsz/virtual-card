@@ -14,7 +14,7 @@ const createCardSchema = joi
 	.options({ allowUnknown: true })
 
 const getCardSchemaParams = joi.object({
-	name: joi.string().required(),
+	id: joi.string().required(),
 })
 
 const getCardSchema = joi

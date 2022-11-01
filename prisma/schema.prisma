@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Card {
-  id          Int      @id @default(autoincrement())
-  name        String   @unique
+  id          String   @id @default(cuid())
+  name        String
   linkedinUrl String
   githubUrl   String
   createdAt   DateTime @default(now())
