@@ -3,8 +3,8 @@ import { CardData } from "@/types/cardTypes"
 
 const cardSchemaBody = joi.object<CardData>({
 	name: joi.string().required(),
-	linkedinUrl: joi.string().required(),
-	githubUrl: joi.string().required(),
+	linkedinUrl: joi.string().uri().required(),
+	githubUrl: joi.string().uri().required(),
 })
 
 const cardSchema = joi
