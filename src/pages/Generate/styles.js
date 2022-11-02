@@ -24,15 +24,22 @@ export const Form = styled.form`
 		padding-left: 20px;
 		font-size: 16px;
 		font-weight: 500;
+		background-color: ${({ Loading }) => (Loading ? "#ebe6e6;" : "#fff;")};
+		cursor: ${({ Loading }) => (Loading ? "wait" : "text")};
 	}
+`
 
-	button {
-		max-width: 500px;
-		height: 50px;
-		border: 2px solid #000;
-		border-radius: 10px;
-		background-color: #fff;
-		font-size: 20px;
-		font-weight: 700;
-	}
+export const Button = styled.button`
+	max-width: 500px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #000;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 700;
+	background-color: ${({ Loading }) => (Loading ? "#ebe6e6;" : "#fff;")};
+	border-color: ${({ Loading }) => (Loading ? "#ebe6e6;" : "#000;")};
+	cursor: ${({ Loading }) => (Loading ? "wait;" : "pointer;")};
 `
