@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 const InputWrapper = ({ children, info }) => {
 	return (
 		<Wrapper>
