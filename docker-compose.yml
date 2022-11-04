@@ -1,0 +1,44 @@
+version: "3"
+services:
+    postgres_db:
+        image: postgres
+        container_name: postgres_db
+        restart: always
+        ports:
+            - "1234:5432"
+        env_file:
+            - ./virtual-card-back/.env
+        volumes:
+            - volume_db:/var/lib/postgresql/data
+
+    node:
+        container_name: node
+        build: ./virtual-card-back
+        ports:
+            - 5000:5000
+        depends_on:
+            - postgres_db
+        env_file:
+            - ./virtual-card-back/.env
+
+    react_app:
+        container_name: react_app
+        build: ./virtual-card-front
+        volumes:
+            - build_react:/var/www/html
+
+    nginx:
+        container_name: nginx
+        build: ./nginx
+        ports:
+            - 8080:80
+        volumes:
+            - build_react:/var/www/html
+        depends_on:
+            - postgres_db
+            - node
+            - react_app
+
+volumes:
+    volume_db:
+    build_react:
