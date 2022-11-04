@@ -9,7 +9,7 @@ const Router = () => {
 			<Routes>
 				<Route path="/" element={<Navigate to="/generate" />} />
 				<Route path="/generate" element={<Generate />} />
-				<Route path="/generate/qrCode" element={<QrCodeComponent />} />
+				<Route path="generate/card/new" element={<QrCodeComponent />} />
 				<Route path="/card/:id" element={<Card />} />
 			</Routes>
 		</BrowserRouter>

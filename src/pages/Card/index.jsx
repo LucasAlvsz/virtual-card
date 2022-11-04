@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { ToastContainer, toast } from "react-toastify"
+import { useNavigate, useParams } from "react-router-dom"
 
 import cardApi from "../../services/cardApi"
 
@@ -9,13 +8,14 @@ import { Container, Button } from "../Generate/styles"
 
 const Card = () => {
 	const { id: cardId } = useParams()
+	const navigate = useNavigate()
 	const [card, setCard] = useState({})
 
 	useEffect(() => {
 		cardApi
 			.getCard(cardId)
 			.then(res => setCard(res.data))
-			.catch(err => toast.error("Something went wrong, please try again later"))
+			.catch(err => navigate("/generate"))
 	}, [])
 
 	return (
@@ -31,7 +31,6 @@ const Card = () => {
 					Linkedin
 				</StyledButton>
 			</span>
-			<ToastContainer />
 		</StyledContainer>
 	)
 }

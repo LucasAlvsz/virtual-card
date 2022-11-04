@@ -1,28 +1,35 @@
-import { useState } from "react"
-import ReactLoading from "react-loading"
+import { useContext, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 import { useForm } from "../../hooks"
 import cardApi from "../../services/cardApi"
+import { CardContext } from "../../contexts/CardContext"
 
-import InputWrapper from "../../components/InputWrapper"
 import * as S from "./styles"
+import InputWrapper from "../../components/InputWrapper"
+import BubbleLoading from "../../components/BubbleLoading"
 
 const Generate = () => {
+	const navigate = useNavigate()
 	const [form, handleForm] = useForm()
 	const [loading, setLoading] = useState(false)
+	const { setNewCardData } = useContext(CardContext)
 
 	const handleSubmit = e => {
 		e.preventDefault()
 		setLoading(true)
 		cardApi
 			.createCard(form)
-			.then(res => {
+			.then(({ data }) => {
 				setLoading(false)
+				setNewCardData({ cardId: data.cardId, ...form })
+				navigate("card/new")
 			})
 			.catch(err => {
 				setLoading(false)
+				console.error(err)
 				toast.error("Something went wrong, please try again later")
 			})
 	}
@@ -60,9 +67,8 @@ const Generate = () => {
 						placeholder="Enter text here"
 					/>
 				</InputWrapper>
-				<S.Button>
-					{loading ? <ReactLoading type="bubbles" color="#000" /> : "Generate Image"}
-				</S.Button>
+
+				<S.Button>{loading ? <BubbleLoading /> : "Generate Image"}</S.Button>
 			</S.Form>
 			<ToastContainer
 				position="top-right"
