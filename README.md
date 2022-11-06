@@ -54,11 +54,13 @@ POST /card
 
 ```json
 {
-	"cardId": "cl9y0owfl00009dfad9rl540t" // Unique card ID (CUID)
+	"cardId": "cl9y0owfl00009dfad9rl540t"
 }
 ```
 
 </br>
+
+#
 
 #### Get a card
 
@@ -82,39 +84,61 @@ GET /card/:cardId
 }
 ```
 
+</br>
+
+#
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-#####For the API without Docker (back-end):
+##### For the API without Docker (back-end):
+
+#
 
 `DATABASE_URL = postgres://username:password@hostname:5432/databasename`
+
 `PORT = 5000 or any port you want [optional]`
 
 ##### For the API with Docker (back-end):
 
+#
+
 `DATABASE_URL = postgres://username:password@postgres_db:5432/databasename`
+
 `POSTGRES_USER = postgres`
+
 `POSTGRES_PASSWORD = postgres`
+
 `POSTGRES_DB = virtual-card`
 
 ##### For the client without Docker (front-end):
 
+#
+
 `VITE_API_URL = http://localhost:[PORT] or http://localhost:5000`
+
 `VITE_BASE_URL = http://localhost:[PORT] or http://localhost:5000`
 
 ##### For the client with Docker (front-end):
 
+#
+
 `VITE_API_URL = http://localhost:8080/api`
+
 `VITE_BASE_URL = http://localhost:8080`
 
 </br>
+
+#
 
 ## Run Locally
 
 > Remember to create a .env file with the environment variables in virtual-card-front and virtual-card-back folders.
 
 ##### Without Docker:
+
+#
 
 Clone the project
 
@@ -172,6 +196,8 @@ Start the client
 
 ##### With Docker:
 
+#
+
 ```bash
   cd virtual-card
 ```
@@ -186,8 +212,6 @@ Start the client
 
 -   [@LucasAlvsz](https://www.github.com/LucasAlvsz) 🪐
 
-<br/>
-<br/>
 <br/>
 
 #
