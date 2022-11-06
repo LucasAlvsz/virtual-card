@@ -1,7 +1,7 @@
 <h1 align="center">
   Virtual Card
   </br>
-    <a href="virtual-card-pi.vercel.app " target="_blank">
+    <a href="https://virtual-card-6na8a5sx0-lucasalvsz.vercel.app/generate" target="_blank">
       <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version">
     </a>
 </h1>
