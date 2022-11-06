@@ -68,7 +68,9 @@ const Generate = () => {
 					/>
 				</InputWrapper>
 
-				<S.Button>{loading ? <BubbleLoading /> : "Generate Image"}</S.Button>
+				<S.Button Loading={loading}>
+					{loading ? <BubbleLoading /> : "Generate Image"}
+				</S.Button>
 			</S.Form>
 			<ToastContainer
 				position="top-right"
