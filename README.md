@@ -84,23 +84,33 @@ GET /card/:cardId
 }
 ```
 
-</br>
-
 #
+
+</br>
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-##### For the API without Docker (back-end):
+##### For the API without Docker:
+
+##### back-end:
 
 `DATABASE_URL = postgres://username:password@hostname:5432/databasename`
 
 `PORT = 5000 or any port you want [optional]`
 
+##### front-end:
+
+`VITE_API_URL = http://localhost:[PORT] or http://localhost:5000`
+
+`VITE_BASE_URL = http://localhost:[PORT] or http://localhost:5000`
+
 #
 
-##### For the API with Docker (back-end):
+##### For the API with Docker:
+
+##### back-end:
 
 `DATABASE_URL = postgres://username:password@postgres_db:5432/databasename`
 
@@ -110,23 +120,11 @@ To run this project, you will need to add the following environment variables to
 
 `POSTGRES_DB = virtual-card`
 
-#
-
-##### For the client without Docker (front-end):
-
-`VITE_API_URL = http://localhost:[PORT] or http://localhost:5000`
-
-`VITE_BASE_URL = http://localhost:[PORT] or http://localhost:5000`
-
-#
-
-##### For the client with Docker (front-end):
+##### front-end:
 
 `VITE_API_URL = http://localhost:8080/api`
 
 `VITE_BASE_URL = http://localhost:8080`
-
-#
 
 </br>
 
@@ -169,7 +167,7 @@ Start the server
 Go to the project client directory
 
 ```bash
-  cd ../virtual-card-front
+  cd virtual-card/virtual-card-front
 ```
 
 Install dependencies
@@ -203,8 +201,6 @@ Start the client
 ```
 
 </br>
-
-#
 
 ## Authors
 
