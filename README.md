@@ -94,15 +94,13 @@ To run this project, you will need to add the following environment variables to
 
 ##### For the API without Docker (back-end):
 
-#
-
 `DATABASE_URL = postgres://username:password@hostname:5432/databasename`
 
 `PORT = 5000 or any port you want [optional]`
 
-##### For the API with Docker (back-end):
-
 #
+
+##### For the API with Docker (back-end):
 
 `DATABASE_URL = postgres://username:password@postgres_db:5432/databasename`
 
@@ -112,33 +110,31 @@ To run this project, you will need to add the following environment variables to
 
 `POSTGRES_DB = virtual-card`
 
-##### For the client without Docker (front-end):
-
 #
+
+##### For the client without Docker (front-end):
 
 `VITE_API_URL = http://localhost:[PORT] or http://localhost:5000`
 
 `VITE_BASE_URL = http://localhost:[PORT] or http://localhost:5000`
 
-##### For the client with Docker (front-end):
-
 #
+
+##### For the client with Docker (front-end):
 
 `VITE_API_URL = http://localhost:8080/api`
 
 `VITE_BASE_URL = http://localhost:8080`
 
-</br>
-
 #
+
+</br>
 
 ## Run Locally
 
 > Remember to create a .env file with the environment variables in virtual-card-front and virtual-card-back folders.
 
 ##### Without Docker:
-
-#
 
 Clone the project
 
@@ -194,9 +190,9 @@ Start the client
   npm run preview
 ```
 
-##### With Docker:
-
 #
+
+##### With Docker:
 
 ```bash
   cd virtual-card
@@ -207,6 +203,8 @@ Start the client
 ```
 
 </br>
+
+#
 
 ## Authors
 
