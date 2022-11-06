@@ -1,5 +1,9 @@
 <h1 align="center">
   Virtual Card
+  </br>
+    <a href="virtual-card-pi.vercel.app " target="_blank">
+      <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version">
+    </a>
 </h1>
 <div align="center">
 
@@ -58,8 +62,6 @@ POST /card
 }
 ```
 
-</br>
-
 #
 
 #### Get a card
@@ -84,15 +86,13 @@ GET /card/:cardId
 }
 ```
 
-#
-
 </br>
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-##### For the API without Docker:
+##### Without Docker:
 
 ##### back-end:
 
@@ -108,7 +108,7 @@ To run this project, you will need to add the following environment variables to
 
 #
 
-##### For the API with Docker:
+##### With Docker:
 
 ##### back-end:
 
