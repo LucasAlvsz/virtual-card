@@ -73,6 +73,7 @@ const Container = styled.div`
 	justify-content: center;
 	background-color: #fff;
 	h1 {
+		width: 100%;
 		font-size: 30px;
 		margin-top: 70px;
 		&:nth-child(2) {
