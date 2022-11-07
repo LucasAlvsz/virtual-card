@@ -74,6 +74,7 @@ const Container = styled.div`
 	background-color: #fff;
 	h1 {
 		width: 100%;
+		text-align: center;
 		font-size: 30px;
 		margin-top: 70px;
 		&:nth-child(2) {
